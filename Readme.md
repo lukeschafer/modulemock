@@ -7,7 +7,8 @@
 
   - override what will be returned by a require call
   - simplifies unit testing
-  - remove overrides (e.g. teardown) [soon]
+  - remove overrides (e.g. teardown) 
+  - doesn't actually perform mocking functionality like spies etc, but allows you to set a mock in place of a module
 
 ## Example
 
@@ -23,7 +24,32 @@
 
     var send = require('../lib/send.js');
     send.get();
-  
+
+## API
+
+Create
+
+    var modulemock = require('modulemock');
+
+Mock a module
+
+    modulemock({'http':{}});
+
+Remove a fake module
+
+    modulemock.unmock('http');
+
+Remove all fake modules
+
+    modulemock.unmockAll();
+
+Clear module cache (only node_modules and yours, not in-builts)
+
+    modulemock.clearModuleCache();
+
+For more usage examples, check out the tests in tests/modulemock.tests.js
+
+
 ## License: The MIT License
 
 Copyright (c) 2011 Luke Schafer
