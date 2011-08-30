@@ -1,13 +1,14 @@
 {
   "name"          : "modulemock",
   "description"   : "mock module requires",
-  "url"           : "http://cloudhead.io/cradle",
-  "keywords"      : ["couchdb", "database", "couch"],
-  "author"        : "Alexis Sellier <self@cloudhead.net>",
+  "url"           : "",
+  "keywords"      : ["mock", "module", "test"],
+  "author"        : "Luke Schafer <luke.schafer@gmail.com>",
   "contributors"  : [],
-  "dependencies"  : { "vargs": ">=0.1.0", "vows": ">=0.5.4" },
-  "version"       : "0.5.5",
-  "main"          : "./lib/cradle",
+  "dependencies"  : {},
+  "devdependencies"  : { "noderunner": ">=0.1" },
+  "version"       : "0.1",
+  "main"          : "./index.js",
   "directories"   : { "test": "./test" },
   "engines"       : { "node": ">=0.3.6" }
 }
