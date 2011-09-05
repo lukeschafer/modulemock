@@ -87,4 +87,5 @@ var tests = {
 
 require('noderunner')
 	.setup({showSuccesses:true, suppressConsole:false})
-	.run("modulemock.tests", tests, function(){});
+	.add("modulemock.tests", tests, function(){})
+	.run();
