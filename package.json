@@ -6,8 +6,8 @@
   "author"        : "Luke Schafer <luke.schafer@gmail.com>",
   "contributors"  : [],
   "dependencies"  : {},
-  "devDependencies"  : { "noderunner": ">=0.1" },
-  "version"       : "0.1",
+  "devDependencies"  : { "noderunner": ">=0.2" },
+  "version"       : "0.2",
   "main"          : "./index.js",
   "directories"   : { "test": "./test" },
   "engines"       : { "node": ">=0.3.6" }
