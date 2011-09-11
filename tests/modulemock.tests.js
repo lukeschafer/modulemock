@@ -79,13 +79,13 @@ var tests = {
 		var http3 = require('./fortest2.js').test.getHttp();
 		assert.strictEqual(http1, http2);
 		assert.strictEqual(http1, http3);
-	},
-	"should ignore this": function() {
-		return {ignore:'yay! ignored'};
 	}
 };
 
+var path = require('path');
 require('noderunner')
 	.setup({showSuccesses:true, suppressConsole:false})
+	.addFile('sometests1', path.resolve('./sometests1.js'))
+	.addFile('sometests2', path.resolve('./sometests2.js'))
 	.add("modulemock.tests", tests, function(){})
 	.run();

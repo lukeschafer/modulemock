@@ -2,6 +2,13 @@ var moduleLib = require('module');
 var original = moduleLib.prototype.require;
 var assert = require('assert');
 
+// this code overrides module.require
+// stuff is stored against the original requiremethod prefixed with underscores e.g. __mocks
+// this is a) for simplicity, and b) to ensure stuff is persisted even once .clearModuleCache() is called
+// since the aforementioned func won't clear base modules
+
+//so the only way to undo everything you just did is to call .unmockAll()
+
 module.exports = function(mocks) {
 	assert.ok(mocks, 'mocks config not defined');
 	original.__mocks = original.__mocks || {};
@@ -11,9 +18,9 @@ module.exports = function(mocks) {
 	}
 	
 	if (!original.__mocked)
-	moduleLib.prototype.require = function(path) {
-		return original.__mocks[path] || moduleLib._load(path, this);
-	};
+		moduleLib.prototype.require = function(path) {
+			return original.__mocks[path] || moduleLib._load(path, this);
+		};
 	original.__mocked = true;
 	
 	return module.exports;

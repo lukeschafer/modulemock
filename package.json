@@ -6,9 +6,9 @@
   "author"        : "Luke Schafer <luke.schafer@gmail.com>",
   "contributors"  : [],
   "dependencies"  : {},
-  "devDependencies"  : { "noderunner": ">=0.2" },
-  "version"       : "0.2",
+  "devDependencies"  : { "noderunner": ">=0.3" },
+  "version"       : "0.3",
   "main"          : "./index.js",
   "directories"   : { "test": "./test" },
-  "engines"       : { "node": ">=0.3.6" }
+  "engines"       : { "node": ">=0.4.0" }
 }
